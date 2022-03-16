@@ -10,7 +10,7 @@
   <p align="center">
     INTRO TO CYBER SECURITY
     <br />
-    <a href="https://github.com/averagephotographer/seth"><strong>Project»</strong></a>
+    <a href="https://discord.gg/Hrm9kAus"><strong>DISCORD»</strong></a>
     <br />
   </p>
 </p>
