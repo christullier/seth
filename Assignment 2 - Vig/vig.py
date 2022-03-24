@@ -2,7 +2,7 @@
 import sys
 
 class Vigenere:
-	
+
 	def __init__(self, message, key, cipher = ""):
 		self._message = message
 		self._key = key
@@ -18,18 +18,17 @@ class Vigenere:
 		cipherText = []
 
 		for i in range(0, lengthKey):
+			asciiKey[i] -= 97
+			asciiMessage[i] -= 97
 			cipherNum = (((asciiKey[i] + asciiMessage[i])) % 26) + 97
-			print(cipherNum)
 			cipherText.append(chr(cipherNum))
 
-		print(cipherText)
 		cipher = ""
 
 		# pop elements into string
 		while(len(cipherText) != 0):
 			cipher += str(cipherText.pop(0))
 
-		print(cipher)
 		# update cipher
 		self._cipher = cipher
 
@@ -49,7 +48,9 @@ class Vigenere:
 		plainText = []
 
 		for i in range(0, lengthKey):
-			plainText.append(chr((((26 + asciiCipher[i] - asciiKey[i])%26)+97)))
+			asciiKey[i] -= 97
+			asciiCipher[i] -= 97
+			plainText.append(chr((((26 + asciiCipher[i] - asciiKey[i]) % 26) + 97)))
 
 		plain = ""
 		# pop elements into string
@@ -70,8 +71,12 @@ if(length < 3):
 # no i/o redirection, manual user input
 if(length == 3):
 	# get mode and key from arguments
-	mode = 'argv1'
-	key = 'argv2'
+	mode = sys.argv[1]
+	key = sys.argv[2]
+	try:
+		key = key.replace(" ", "")
+	except:
+		pass
 	lengthKey = len(key)
 
 	while(True):
@@ -88,11 +93,51 @@ if(length == 3):
 		# key "vigenere" matching length of message
 		messKey += key[0:lengthMes]
 		# create Vigenere object for encryption/decryption of messages
-		EncDec = Vigenere(message, key)
+		EncDec = Vigenere(message, messKey)
 
 		if(mode == "-e"):
 			print(EncDec.encode())
 
 		elif(mode == "-d"):
 			print(EncDec.decode())
+
+elif(length == 5):
+	# get mode, key, io red., and file from arguments
+	mode = sys.argv[1]
+	key = sys.argv[2]
+	try:
+		key = key.replace(" ", "")
+	except:
+		pass
+	ioRed = sys.argv[3]
+	ioFile = sys.argv[4]
+	lengthKey = len(key)
+	message = ""
+
+	# try to read file
+	try:
+		with open(ioFile) as f:
+		    for line in f:
+		        message += line
+	except:
+		pass
+
+	lengthMes = len(message)
+	messKey = ""
+
+	# generate key automatically, due to redundancy
+	while(lengthMes >= lengthKey):
+		lengthMes -= lengthKey
+		messKey += key
+	
+	# key "vigenere" matching length of message
+	messKey += key[0:lengthMes]
+	# create Vigenere object for encryption/decryption of messages
+	EncDec = Vigenere(message, messKey)
+
+	if(mode == "-e"):
+		print(EncDec.encode())
+
+	elif(mode == "-d"):
+		print(EncDec.decode())
 
