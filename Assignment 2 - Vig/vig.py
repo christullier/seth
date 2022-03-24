@@ -2,6 +2,7 @@
 import sys
 
 class Vigenere:
+	
 	def __init__(self, message, key, cipher = ""):
 		self._message = message
 		self._key = key
@@ -23,6 +24,7 @@ class Vigenere:
 
 		print(cipherText)
 		cipher = ""
+
 		# pop elements into string
 		while(len(cipherText) != 0):
 			cipher += str(cipherText.pop(0))
@@ -39,6 +41,7 @@ class Vigenere:
 		lengthKey = len(self._key)
 		# get integer-based representations of the key and cipher
 		asciiKey = [ord(i) for i in self._key]
+
 		if(len(self._cipher) == 0):
 			self._cipher = self._message
 		asciiCipher = [ord(i) for i in self._cipher]
@@ -60,13 +63,17 @@ class Vigenere:
 
 length = len(sys.argv)
 
+# too few arguments
 if(length < 3):
 	print("Usage: py Vig.py -[mode] [key] or py Vig.py -[mode] [key] [i/o red.] [file]")
 
+# no i/o redirection, manual user input
 if(length == 3):
+	# get mode and key from arguments
 	mode = 'argv1'
 	key = 'argv2'
 	lengthKey = len(key)
+
 	while(True):
 		# message to be encoded
 		message = input("")
@@ -82,8 +89,10 @@ if(length == 3):
 		messKey += key[0:lengthMes]
 		# create Vigenere object for encryption/decryption of messages
 		EncDec = Vigenere(message, key)
+
 		if(mode == "-e"):
 			print(EncDec.encode())
+
 		elif(mode == "-d"):
 			print(EncDec.decode())
 
