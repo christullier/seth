@@ -3,14 +3,14 @@ from ftplib import FTP
 
 
 # Declare global variables
-IP = "138.47.99.64"
+IP = "138.47.128.12"
 PORT = 21
-USER = "anonymous"
-PASSWORD = ""
-FOLDER = "7"
+USER = "osiris"
+PASSWORD = "encryptiongods"
+FOLDER = "files/10"
 USE_PASSIVE = True
 
-METHOD = 7 # use '7' or '10' to specify number of bits
+METHOD = 10 # use '7' or '10' to specify number of bits
 RUN_TYPE = 'decode' # use 'encode' or 'decode' to specify how to run
 
 
