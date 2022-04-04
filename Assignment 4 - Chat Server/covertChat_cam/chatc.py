@@ -1,3 +1,4 @@
+# import
 from socket import socket, AF_INET, SOCK_STREAM
 from time import time
 from sys import stdout
