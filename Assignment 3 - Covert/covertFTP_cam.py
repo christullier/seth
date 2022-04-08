@@ -6,8 +6,8 @@ from ftplib import FTP
 IP = "138.47.128.12"
 PORT = 21
 USER = "osiris"
-PASSWORD = "encryptiongods"
-FOLDER = "files/10"
+PASSWORD = "EncryptionGods"
+FOLDER = "/"
 USE_PASSIVE = True
 
 METHOD = 10 # use '7' or '10' to specify number of bits
