@@ -1,3 +1,4 @@
+# imports
 import sys
 import re
 import zoneinfo
@@ -13,8 +14,10 @@ epoch = epoch.split(" ")
 
 # get local timezone
 local = get_localzone()
+
 # format
 format = "%Y %m %d %H %M %S"
+
 # get current time
 # now = datetime.now(local)
 now = datetime(2017, 3, 23, 18, 2, 6)
@@ -26,17 +29,21 @@ epocStr = " "
 epocStr = epocStr.join(epoch)
 timeCurStr = " "
 timeCurStr = timeCurStr.join(time_cur)
+
 # date-time objects
 d1 = datetime.strptime(epocStr, format)
 d2 = datetime.strptime(timeCurStr, format)
+
 # calculate number of seconds elapsed
 days_elapsed = abs(d2 - d1).days
 seconds_elapsed = abs(d2 - d1).seconds
 seconds_elapsed += (days_elapsed * 86400)
+
 # check for dst
 dst_date2 = datetime(2017, 3, 23, 18, 2, 6, tzinfo = zoneinfo.ZoneInfo(key = 'US/Central'))
 if(dst_date2.dst()):
 	seconds_elapsed -= 3600
+
 # find distance to beginning of 60-second interval
 modQuotient = seconds_elapsed%60
 
