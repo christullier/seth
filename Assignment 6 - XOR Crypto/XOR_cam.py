@@ -5,7 +5,7 @@ import sys
 user_in = sys.stdin.buffer.read()
 
 # take input from key file
-f = open('key2', 'rb')
+f = open('key', 'rb')
 key = f.read()
 f.close()
 
