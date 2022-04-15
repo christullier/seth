@@ -2,7 +2,6 @@ import sys
 import os
 
 
-##### CLEAN UP REDUNDANCIES IN RETRIEVAL CAMERON PLEASE ITS GROSS #####
 # initialize user set flags
 offset = 0
 interval = 1
@@ -32,25 +31,21 @@ for flag in sys.argv:
 	elif flag[:2] == "-h":
 		secret = flag[2:]
 
+# set sentinel value for bytes
+SENTINEL = bytearray(b'\x00\xFF\x00\x00\xFF\x00')
+
+# read in bytes from files
+f = open(wrapper, 'rb')
+wrapme = bytearray(f.read())
+f.close()
+
+if store == True:
+	f = open(secret, 'rb')
+	hideme = bytearray(f.read())
+	f.close()
+
 if byte:
 	#### BYTE METHOD
-	
-	# set sentinel value for bytes
-	SENTINEL = bytearray("EOF", "UTF-8")
-	
-	# read in bytes from files
-	f = open(wrapper, 'rb')
-	wrapme = bytearray(f.read())
-	f.close()
-	
-	if store == True:
-		f = open(secret, 'rb')
-		hideme = bytearray(f.read())
-		f.close()
-
-	# get number of bytes in files, may not be neccessary
-	wSize = os.path.getsize(f"./{wrapper}")
-	hSize = os.path.getsize(f"./{secret}")
 	
 	if store == True:
 		## STORAGE
@@ -72,7 +67,6 @@ if byte:
 		## EXTRACTION
 		sent_found = False
 		empty = bytearray()
-		pos_sent_buff = bytearray()
 		b = bytearray(1)
 		while (offset < len(wrapme) and sent_found == False):
 			b[0] = wrapme[offset]
@@ -83,6 +77,7 @@ if byte:
 				# set SENTINEL index
 				# increment offset
 				# set possibility of SENTINEL to true
+				pos_sent_buff = bytearray()
 				pos_sent_buff.extend(b)
 				sent_i = 1
 				offset += interval
@@ -115,19 +110,6 @@ if byte:
 elif bit == True:
 	### BIT METHOD
 	
-	# set sentinel value for bytes
-	SENTINEL = bytearray("EOF", "UTF-8")
-	
-	# read in bytes from files
-	f = open(wrapper, 'rb')
-	wrapme = bytearray(f.read())
-	f.close()
-	
-	if store == True:
-		f = open(secret, 'rb')
-		hideme = bytearray(f.read())
-		f.close()
-	
 	if store == True:
 		## STORAGE
 		for i in range(0, len(hideme)):
@@ -153,7 +135,6 @@ elif bit == True:
 		## EXTRACTION
 		sent_found = False
 		empty = bytearray()
-		pos_sent_buff = bytearray()
 		b = bytearray(1)
 		while (offset < len(wrapme) and sent_found == False):
 			b[0] = 0
@@ -171,6 +152,7 @@ elif bit == True:
 				# set SENTINEL index
 				# increment offset
 				# set possibility of SENTINEL to true
+				pos_sent_buff = bytearray()
 				pos_sent_buff.extend(b)
 				sent_i = 1
 				offset += interval
@@ -200,7 +182,7 @@ elif bit == True:
 						sent_found = True
 						
 			# add byte to hidden file and increase index
-			if not sent_found:				
+			if not sent_found:
 				empty.extend(b)
 				offset += interval
 		
