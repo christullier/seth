@@ -5,7 +5,7 @@ import sys
 user_in = sys.stdin.buffer.read()
 
 # take input from key file
-f = open('key', 'rb')
+f = open('key2', 'rb')
 key = f.read()
 f.close()
 
@@ -14,5 +14,5 @@ def byte_xor(ba1, ba2):
 
 conversion = (byte_xor(user_in, key))
 
-print(conversion)
+sys.stdout.buffer.write(conversion)
 
