@@ -1,4 +1,13 @@
-# import
+#####################################################################################################################
+#                                                                                                                   #
+#       Program 4: Chat Client                                                                               		#
+#       Group Name: Seth                                                                                            #
+#       Group Members:  Ethan Clapp, Cameron Thomas, Dylan Weaver, Ghufran Aldawood,                                #
+#                       Chris Tullier, David Mains, Will Shepherd                                                   #
+#                                                                                                                   #
+#####################################################################################################################
+
+# imports
 from socket import socket, AF_INET, SOCK_STREAM
 from time import time
 from sys import stdout
