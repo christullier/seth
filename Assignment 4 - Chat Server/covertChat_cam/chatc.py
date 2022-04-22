@@ -15,12 +15,12 @@ from sys import stdout
 DEBUG = False
 
 # set timings for bits
-ZERO = 0.031
-ONE = 0.11
+ZERO = 0.1
+ONE = 0.15
 
 # declare ip and port to connect to
-ip = "localhost"
-port = 1337
+ip = "138.47.99.64"
+port = 33333
 
 # initialize the socket
 s = socket(AF_INET, SOCK_STREAM)
@@ -44,7 +44,7 @@ while ((data.rstrip("\n")) != "EOF"):
 	delta = round(t1 - t0, 3)
 	
 	if DEBUG:
-		stdout.write(f" {delta}\n")
+		stdout.write(f"DELTA: {delta}\n")
 		stdout.flush
 		
 	if delta >= ONE:
