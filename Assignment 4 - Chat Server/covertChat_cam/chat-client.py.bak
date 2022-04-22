@@ -10,8 +10,8 @@ ONE = 0.1
 
 
 # declare ip and port to connect to
-ip = "138.47.99.64"
-port = 31337
+ip = "localhost"
+port = 1337
 
 # initialize the socket
 s = socket(AF_INET, SOCK_STREAM)
