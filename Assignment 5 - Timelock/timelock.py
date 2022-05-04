@@ -1,6 +1,6 @@
 #####################################################################################################################
 #                                                                                                                   #
-#       Program 2: Timelock		                                                                                    #
+#       Program 5: Timelock		                                                                            #
 #       Group Name: Seth                                                                                            #
 #       Group Members:  Ethan Clapp, Cameron Thomas, Dylan Weaver, Ghufran Aldawood,                                #
 #                       Chris Tullier, David Mains, Will Shepherd                                                   #
