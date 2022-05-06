@@ -14,7 +14,7 @@ import sys
 user_in = sys.stdin.buffer.read()
 
 # get key
-f = open('key2', 'rb')
+f = open('k3y', 'rb')
 key = f.read()
 f.close()
 
