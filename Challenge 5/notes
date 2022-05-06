@@ -4,6 +4,10 @@ FTP server IP address: 138.47.132.114
 disintuitive
 disintuitiveXXXXY
 
-cyber image = python3 steg.py -r -B -o2048 -i8 -woutput > output2
+bracelet (output) = python3 xor.py < c1ph3r > output
+cyber image (output2) = python3 steg.py -r -B -o2048 -i8 -woutput > output2
+constitution (output3) = python3 steg.py -r -b -o513 -i2 -woutput > output3
+final message (output4) = python3 steg.py -r -B -o96 -i64 -woutput3 > output4
+
 
 
