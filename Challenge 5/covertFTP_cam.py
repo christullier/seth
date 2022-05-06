@@ -3,10 +3,10 @@ from ftplib import FTP
 
 
 # Declare global variables
-IP = "138.47.128.12"
+IP = "138.47.132.114"
 PORT = 21
-USER = "osiris"
-PASSWORD = "EncryptionGods"
+USER = "disintuitive"
+PASSWORD = "disintuitiveXXXXY"
 FOLDER = "/"
 USE_PASSIVE = True
 
