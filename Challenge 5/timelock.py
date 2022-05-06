@@ -10,7 +10,7 @@
 # imports
 import sys
 import re
-import zoneinfo
+import backports.zoneinfo as zoneinfo
 from hashlib import md5
 from datetime import datetime
 from tzlocal import get_localzone
