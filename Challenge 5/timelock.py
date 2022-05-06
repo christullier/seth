@@ -68,7 +68,7 @@ time_hash_rev = time_hash[::-1]
 # use regex to get code
 match1 = re.findall(r'[a-z]{1}', time_hash)
 match2 = re.findall(r'\d{1}', time_hash_rev)
-code = match1[0] + match1[1] + match2[0] + match2[1]
+code = match1[0] + match1[1] + match2[0] + match2[1] + time_hash[int(len(time_hash)/2)]
 
 # output variables
 print("Time elapsed: " + str(seconds_elapsed))
