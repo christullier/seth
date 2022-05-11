@@ -1,12 +1,15 @@
+# note: there needs to be an 'out' file
 import os
 
-size = "b"
+b_method = "B"
 
-# starting
-offset = "1"
-interval = "1"
+# starting values
+offset = "512"
+interval = "16" 
 
-filename = "9.bmp"
+filename = "e5532426b580be8ec82f0ab2f4fd4433.bmp"
+# have it search for all filetypes that we're looking for
+# eg. grab all .bmp files
 output = ""
 
 # offset change
@@ -15,9 +18,11 @@ interval_change = 2
 
 for i in range(10):
     for j in range(10):
-        output = f"{size}_{offset}_{interval}.png"
+        output = f"{b_method}_{offset}_{interval}.txt"
         
-        command = f"python steg.py -{size} -o{offset} -i{interval} -w{filename} > out/{output}"
+        # -r for retrieving -s for storing
+        # but we're only using the for retrieval
+        command = f"python steg.py -r -{b_method} -o{offset} -i{interval} -w{filename} > out/{output}"
         os.system(command)
 
         interval = str(int(interval) * interval_change)
