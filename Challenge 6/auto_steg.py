@@ -4,8 +4,8 @@ import os
 b_method = "B"
 
 # starting values
-offset = "512"
-interval = "16" 
+offset = "1"
+interval = "1" 
 
 filename = "e5532426b580be8ec82f0ab2f4fd4433.bmp"
 # have it search for all filetypes that we're looking for
@@ -22,6 +22,8 @@ for i in range(10):
         
         # -r for retrieving -s for storing
         # but we're only using the for retrieval
+        # sample:
+        # python steg.py -r -b -o2 -i2 -wName > output
         command = f"python steg.py -r -{b_method} -o{offset} -i{interval} -w{filename} > out/{output}"
         os.system(command)
 
