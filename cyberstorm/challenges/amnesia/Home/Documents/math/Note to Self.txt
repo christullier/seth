@@ -1,0 +1,1 @@
+Use the word count with the filename to get the correct shift, going in order of the file numbers.

@@ -1,0 +1,5 @@
+Cyrus is an elder that has forgotten where he put his very important password on his computer. Cyrus's nephew made sure to leave hints because he knows how forgetful his gramps can be. Cyrus and his nephew will help guide you throughout your discovery.
+
+Given a home directory, you will have to explore each directory and solve a series of puzzles to get components of a master password. For every layer that is solved, Cyrus provides a hint that helps determine the next step of the puzzle to progress forward. Once all components of the master password are retrieved, you must submit the components to a program to retrieve the final deliverable.
+
+Cyrus: “Listen here youngin’. I need you to use your fancy techno wizard skills and gadgets to help me find my password to a super important account. It was way back in the day when I set that password and it is stored somewhere on this damn machine and I just cannot for the life of me remember it. My nephew said that hiding a password on the desktop was bad, so he hid it for me. So let’s get this show on the road!”
